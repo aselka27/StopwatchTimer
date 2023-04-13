@@ -8,17 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		34A0234329E8917800F55010 /* StopwatchTimerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A0234229E8917800F55010 /* StopwatchTimerApp.swift */; };
-		34A0234529E8917800F55010 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A0234429E8917800F55010 /* ContentView.swift */; };
+		34A0234529E8917800F55010 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A0234429E8917800F55010 /* MainView.swift */; };
 		34A0234729E8917A00F55010 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34A0234629E8917A00F55010 /* Assets.xcassets */; };
 		34A0234A29E8917A00F55010 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34A0234929E8917A00F55010 /* Preview Assets.xcassets */; };
+		34A0235129E899F900F55010 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A0235029E899F900F55010 /* MainViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		34A0233F29E8917800F55010 /* StopwatchTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StopwatchTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34A0234229E8917800F55010 /* StopwatchTimerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopwatchTimerApp.swift; sourceTree = "<group>"; };
-		34A0234429E8917800F55010 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		34A0234429E8917800F55010 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		34A0234629E8917A00F55010 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		34A0234929E8917A00F55010 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		34A0235029E899F900F55010 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,9 +54,10 @@
 			isa = PBXGroup;
 			children = (
 				34A0234229E8917800F55010 /* StopwatchTimerApp.swift */,
-				34A0234429E8917800F55010 /* ContentView.swift */,
+				34A0234429E8917800F55010 /* MainView.swift */,
 				34A0234629E8917A00F55010 /* Assets.xcassets */,
 				34A0234829E8917A00F55010 /* Preview Content */,
+				34A0235029E899F900F55010 /* MainViewModel.swift */,
 			);
 			path = StopwatchTimer;
 			sourceTree = "<group>";
@@ -137,8 +140,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34A0234529E8917800F55010 /* ContentView.swift in Sources */,
+				34A0234529E8917800F55010 /* MainView.swift in Sources */,
 				34A0234329E8917800F55010 /* StopwatchTimerApp.swift in Sources */,
+				34A0235129E899F900F55010 /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
