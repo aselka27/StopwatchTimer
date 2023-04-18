@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		209AF8F5CA694913E1D87042 /* Pods_StopwatchTimer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFA3A2A1B684DAE537A08088 /* Pods_StopwatchTimer.framework */; };
 		34A0234329E8917800F55010 /* StopwatchTimerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A0234229E8917800F55010 /* StopwatchTimerApp.swift */; };
 		34A0234529E8917800F55010 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A0234429E8917800F55010 /* MainView.swift */; };
 		34A0234729E8917A00F55010 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34A0234629E8917A00F55010 /* Assets.xcassets */; };
 		34A0234A29E8917A00F55010 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34A0234929E8917A00F55010 /* Preview Assets.xcassets */; };
 		34A0235129E899F900F55010 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A0235029E899F900F55010 /* MainViewModel.swift */; };
+		34A8168129EF2EB600B74ABD /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A8168029EF2EB600B74ABD /* Time.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +23,10 @@
 		34A0234629E8917A00F55010 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		34A0234929E8917A00F55010 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		34A0235029E899F900F55010 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		34A8168029EF2EB600B74ABD /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
+		6BAA097D5C0EC22153CA7E04 /* Pods-StopwatchTimer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StopwatchTimer.debug.xcconfig"; path = "Target Support Files/Pods-StopwatchTimer/Pods-StopwatchTimer.debug.xcconfig"; sourceTree = "<group>"; };
+		7164D1E43F559BF54533662C /* Pods-StopwatchTimer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StopwatchTimer.release.xcconfig"; path = "Target Support Files/Pods-StopwatchTimer/Pods-StopwatchTimer.release.xcconfig"; sourceTree = "<group>"; };
+		AFA3A2A1B684DAE537A08088 /* Pods_StopwatchTimer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StopwatchTimer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -28,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				209AF8F5CA694913E1D87042 /* Pods_StopwatchTimer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -39,6 +46,8 @@
 			children = (
 				34A0234129E8917800F55010 /* StopwatchTimer */,
 				34A0234029E8917800F55010 /* Products */,
+				CBF221E98938A65F33AF3F75 /* Pods */,
+				D30059EB8D0D0FE9C242F6F9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,10 +63,11 @@
 			isa = PBXGroup;
 			children = (
 				34A0234229E8917800F55010 /* StopwatchTimerApp.swift */,
+				34A8168029EF2EB600B74ABD /* Time.swift */,
 				34A0234429E8917800F55010 /* MainView.swift */,
-				34A0234629E8917A00F55010 /* Assets.xcassets */,
-				34A0234829E8917A00F55010 /* Preview Content */,
 				34A0235029E899F900F55010 /* MainViewModel.swift */,
+				34A8167F29EF2E9900B74ABD /* Resources */,
+				34A0234829E8917A00F55010 /* Preview Content */,
 			);
 			path = StopwatchTimer;
 			sourceTree = "<group>";
@@ -70,6 +80,31 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		34A8167F29EF2E9900B74ABD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				34A0234629E8917A00F55010 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CBF221E98938A65F33AF3F75 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6BAA097D5C0EC22153CA7E04 /* Pods-StopwatchTimer.debug.xcconfig */,
+				7164D1E43F559BF54533662C /* Pods-StopwatchTimer.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		D30059EB8D0D0FE9C242F6F9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AFA3A2A1B684DAE537A08088 /* Pods_StopwatchTimer.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -77,9 +112,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 34A0234D29E8917A00F55010 /* Build configuration list for PBXNativeTarget "StopwatchTimer" */;
 			buildPhases = (
+				484F7307767E1E7329ADD238 /* [CP] Check Pods Manifest.lock */,
 				34A0233B29E8917800F55010 /* Sources */,
 				34A0233C29E8917800F55010 /* Frameworks */,
 				34A0233D29E8917800F55010 /* Resources */,
+				34A8168729EF370800B74ABD /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -114,6 +151,8 @@
 				Base,
 			);
 			mainGroup = 34A0233629E8917800F55010;
+			packageReferences = (
+			);
 			productRefGroup = 34A0234029E8917800F55010 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -135,11 +174,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		34A8168729EF370800B74ABD /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n\n";
+		};
+		484F7307767E1E7329ADD238 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-StopwatchTimer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		34A0233B29E8917800F55010 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34A8168129EF2EB600B74ABD /* Time.swift in Sources */,
 				34A0234529E8917800F55010 /* MainView.swift in Sources */,
 				34A0234329E8917800F55010 /* StopwatchTimerApp.swift in Sources */,
 				34A0235129E899F900F55010 /* MainViewModel.swift in Sources */,
@@ -199,7 +281,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -253,7 +335,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -265,6 +347,7 @@
 		};
 		34A0234E29E8917A00F55010 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6BAA097D5C0EC22153CA7E04 /* Pods-StopwatchTimer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -279,6 +362,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -294,6 +378,7 @@
 		};
 		34A0234F29E8917A00F55010 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7164D1E43F559BF54533662C /* Pods-StopwatchTimer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -308,6 +393,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

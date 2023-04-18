@@ -7,54 +7,49 @@
 
 import Foundation
 
-
 enum Modes {
     case running
     case paused
     case stopped
 }
 
-
 class MainViewModel: ObservableObject {
-    @Published var secondsElapsed = 0
-    @Published var minutesElapsed = 0
-    @Published var hoursElapsed = 0
+    
+    @Published var timeModel = Time()
+    @Published var mode = Modes.stopped
     @Published var types = ["Stopwatch", "Timer"]
     var hours = [Int](0..<24)
     var minutes = [Int](0..<60)
     var seconds = [Int](0..<60)
     var counter = 0
     var timer = Timer()
-   @Published var mode = Modes.stopped
- 
     
     func runStopwatch() {
-        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { [weak self] timer in
+        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { [weak self] _ in
             guard let self = self else { return }
             self.counter += 1
-            self.hoursElapsed = self.counter / 3600
-            self.minutesElapsed = (self.counter % 3600) / 60
-            self.secondsElapsed = (self.counter % 3600) % 60
+            self.timeModel.hoursElapsed = self.counter / 3600
+            self.timeModel.minutesElapsed = (self.counter % 3600) / 60
+            self.timeModel.secondsElapsed = (self.counter % 3600) % 60
         })
     }
     
     func runTimer() {
         mode = .running
-        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true){ tempTimer in
-                    if self.secondsElapsed == 0 && self.minutesElapsed != 0 {
-                        self.minutesElapsed -= 1
-                        self.secondsElapsed = 59
-                    } else if self.minutesElapsed == 0 && self.hoursElapsed != 0 {
-                        self.hoursElapsed -= 1
-                        self.minutesElapsed = 59
-                        self.secondsElapsed = 59
-                    } else if self.minutesElapsed == 0 && self.hoursElapsed == 0 && self.secondsElapsed == 0 {
-                        self.timer.invalidate()
-                        
-                    } else {
-                        self.secondsElapsed -= 1
-                    }
-                }
+        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
+            if  self.timeModel.secondsElapsed == 0 &&  self.timeModel.minutesElapsed != 0 {
+                self.timeModel.minutesElapsed -= 1
+                self.timeModel.secondsElapsed = 59
+            } else if  self.timeModel.minutesElapsed == 0 &&  self.timeModel.hoursElapsed != 0 {
+                self.timeModel.hoursElapsed -= 1
+                self.timeModel.minutesElapsed = 59
+                self.timeModel.secondsElapsed = 59
+            } else if  self.timeModel.minutesElapsed == 0 &&  self.timeModel.hoursElapsed == 0 &&  self.timeModel.secondsElapsed == 0 {
+                self.timer.invalidate()
+            } else {
+                self.timeModel.secondsElapsed -= 1
+            }
+        }
     }
     
     func pauseStopwatch() {
@@ -66,8 +61,17 @@ class MainViewModel: ObservableObject {
         mode = .stopped
         timer.invalidate()
         counter = 0
-        secondsElapsed = 0
-        minutesElapsed = 0
-        hoursElapsed = 0
+        self.timeModel.secondsElapsed = 0
+        self.timeModel.minutesElapsed = 0
+        self.timeModel.hoursElapsed = 0
+    }
+}
+
+extension MainViewModel {
+    var formattedTimeString: String {
+        return String(format: "%02i:%02i:%02i",
+                      self.timeModel.hoursElapsed,
+                      self.timeModel.minutesElapsed,
+                      self.timeModel.secondsElapsed)
     }
 }

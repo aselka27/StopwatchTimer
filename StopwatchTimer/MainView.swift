@@ -32,26 +32,18 @@ struct MainView: View {
                     }
                 }
                 .pickerStyle(.segmented)
-                .onChange(of: isTimer, perform: { newValue in
-                    
-                })
                 .padding(.horizontal, 70)
             }
             Spacer(minLength: 60)
             VStack {
-                Text(String(format: "%02i:%02i:%02i", viewModel.hoursElapsed, viewModel.minutesElapsed, viewModel.secondsElapsed))
+                Text(viewModel.formattedTimeString)
                     .font(.system(size: 60, weight: .bold))
                
                 if isTimer == "Timer" && viewModel.mode != .running && viewModel.mode != .paused {
                     Spacer()
                     timePickerView
-                        
                 }
                 Spacer()
-                
-               
-                
-               
                 HStack(spacing: 35) {
                     Button {
                         isResetTapped.toggle()
@@ -99,7 +91,7 @@ struct MainView: View {
             Spacer()
         }
         .padding()
-        .background(.yellow)
+        .background(Color.yellow)
     }
 
 }
@@ -107,19 +99,19 @@ struct MainView: View {
 extension MainView {
     var timePickerView: some View {
         HStack {
-            Picker("", selection: $viewModel.hoursElapsed) {
+            Picker("", selection: $viewModel.timeModel.hoursElapsed) {
                 ForEach(0..<viewModel.hours.count) { index in
                     Text("\(self.viewModel.hours[index])")
                 }
             }
             .pickerStyle(.wheel)
-            Picker("", selection: $viewModel.minutesElapsed) {
+            Picker("", selection: $viewModel.timeModel.minutesElapsed) {
                 ForEach(0..<viewModel.minutes.count) { index in
                     Text("\(self.viewModel.minutes[index])")
                 }
             }
             .pickerStyle(.wheel)
-            Picker("", selection: $viewModel.secondsElapsed) {
+            Picker("", selection: $viewModel.timeModel.secondsElapsed) {
                 ForEach(0..<viewModel.seconds.count) { index in
                     Text("\(self.viewModel.seconds[index])")
                 }
