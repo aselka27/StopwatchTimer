@@ -15,7 +15,7 @@ enum Modes {
 
 class MainViewModel: ObservableObject {
     
-    @Published var timeModel = Time()
+    private var timeModel = Time()
     @Published var mode = Modes.stopped
     @Published var types = ["Stopwatch", "Timer"]
     var hours = [Int](0..<24)
